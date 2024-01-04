@@ -1,8 +1,6 @@
 import fetch from "isomorphic-fetch";
 import * as mw from "./middleware";
 
-type RequestInput = RequestInfo; // string | URL | globalThis.Request;
-
 export interface OakResponse<T extends object = any> {
   status: number;
   headers: Headers;
@@ -12,7 +10,7 @@ export interface OakResponse<T extends object = any> {
 
 export interface OakContext<T extends object = any> {
   req: {
-    input: RequestInput;
+    input: RequestInfo;
     init: RequestInit,
   };
   res?: OakResponse<T>;
@@ -29,15 +27,15 @@ export class OakClient {
     this.middleware.push(middleware);
   }
 
-  public get<T extends object = any>(input: RequestInput, init?: RequestInit) {
+  public get<T extends object = any>(input: RequestInfo, init?: RequestInit) {
     return this.fetch<T>(input, { ...init, method: "GET" });
   }
 
-  public post<T extends object = any>(input: RequestInput, init?: RequestInit) {
+  public post<T extends object = any>(input: RequestInfo, init?: RequestInit) {
     return this.fetch<T>(input, { ...init, method: "POST" });
   }
 
-  public postJson<T extends object = any>(input: RequestInput, body: object, init?: RequestInit) {
+  public postJson<T extends object = any>(input: RequestInfo, body: object, init?: RequestInit) {
     return this.fetch<T>(input, {
       ...init,
       method: "POST",
@@ -49,7 +47,7 @@ export class OakClient {
     });
   }
 
-  public async fetch<T extends object = any>(input: RequestInput, init: RequestInit = {}): Promise<OakResponse<T>> {
+  public async fetch<T extends object = any>(input: RequestInfo, init: RequestInit = {}): Promise<OakResponse<T>> {
     const ctx: OakContext = {
       req: { input, init },
       res: undefined,
