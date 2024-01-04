@@ -2,13 +2,13 @@
   "name": "@oak/client",
   "author": "Landon Springer <landon.springer@gmail.com>",
   "license": "ISC",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "publishConfig": {
     "registry": "http://localhost:4873"
   },
   "description": "",
   "main": "./dist/index.js",
-  "files": ["dist", "src"],
+  "files": ["dist"],
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "npm run build -- --watch",
@@ -23,7 +23,6 @@
     "postversion": "git push --follow-tags"
   },
   "devDependencies": {
-    "@types/isomorphic-fetch": "^0.0.39",
     "@types/jest": "^29.5.11",
     "jest": "^29.7.0",
     "jest-watch-suspend": "^1.1.2",
@@ -35,6 +34,6 @@
   },
   "dependencies": {
     "@hapi/boom": "^10.0.1",
-    "isomorphic-fetch": "^3.0.0"
+    "cross-fetch": "^4.0.0"
   }
 }

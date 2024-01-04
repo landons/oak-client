@@ -2,7 +2,7 @@
     "compilerOptions": {
       "strict": true,
       "outDir": "./dist",
-      "lib": ["ES2019", "DOM"],
+      "lib": ["ES2016", "DOM"],
       "target": "ES2016",
       "moduleResolution": "node",
       "esModuleInterop": true,

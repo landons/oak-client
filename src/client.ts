@@ -1,5 +1,8 @@
-import fetch from "isomorphic-fetch";
+import fetch from "cross-fetch";
 import * as mw from "./middleware";
+
+export type FetchType = typeof fetch;
+export type FetchArgs = Parameters<FetchType>;
 
 export interface OakResponse<T extends object = any> {
   status: number;

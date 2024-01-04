@@ -1,12 +1,6 @@
 import Boom from "@hapi/boom";
 import { TimeoutError } from "./errors";
 import { OakContext, OakNext, OakResponse } from "./client";
-// import { TimeoutError } from "./errors";
-
-// TODO: Next Middlewares:
-// 1) Observability (logging, metrics, alerts, etc.)
-// 2) Auth
-// 3) Retries
 
 export type OakHandler = (ctx: OakContext, next: OakNext) => Promise<void | OakResponse>;
 
@@ -17,7 +11,6 @@ export const urlPrefix = (prefix: string): OakHandler => async (ctx: OakContext,
 
 export const defaultHeaders = (defaultHeaders: HeadersInit) => async ({ req }: OakContext, next: OakNext) => {
   req.init.headers = {
-    // TODO: fix me
     ...Object.fromEntries((new Headers(defaultHeaders) as any).entries()),
     ...Object.fromEntries((new Headers(req.init.headers) as any).entries()),
   };
