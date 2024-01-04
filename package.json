@@ -2,7 +2,7 @@
   "name": "@oak/client",
   "author": "Landon Springer <landon.springer@gmail.com>",
   "license": "ISC",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "publishConfig": {
     "registry": "http://localhost:4873"
   },
@@ -10,12 +10,16 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
+    "dev": "npm run build -- --watch",
     "test": "NODE_ENV=test jest",
     "test:debug": "NODE_ENV=test node --inspect-brk ./node_modules/.bin/jest --runInBand",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage",
+    "clean": "rimraf ./dist",
     "build": "tsc",
-    "start": "npm run build -- --watch"
+    "prebuild": "npm run clean",
+    "preversion": "npm run build",
+    "postversion": "git push --follow-tags"
   },
   "devDependencies": {
     "@types/isomorphic-fetch": "^0.0.39",
@@ -24,6 +28,7 @@
     "jest-watch-suspend": "^1.1.2",
     "jest-watch-typeahead": "^2.2.2",
     "nock": "^13.4.0",
+    "rimraf": "^5.0.5",
     "ts-jest": "^29.1.1",
     "typescript": "^5.3.3"
   },
