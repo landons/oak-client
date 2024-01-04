@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+      "strict": true,
+      "outDir": "./dist",
+      "lib": ["ES2019", "DOM"],
+      "target": "ES2016",
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "declaration": true,
+      "inlineSources": true,
+      "inlineSourceMap": true,
+      "baseUrl": "./src",
+      "types": ["node", "jest"],
+      "typeRoots": ["./src/types", "node_modules/@types"]
+    },
+    "include": ["./src/**/*"]
+  }
+
