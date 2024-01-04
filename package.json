@@ -1,5 +1,7 @@
 {
   "name": "@oak/client",
+  "author": "Landon Springer <landon.springer@gmail.com>",
+  "license": "ISC",
   "version": "1.0.1",
   "publishConfig": {
     "registry": "http://localhost:4873"
@@ -15,8 +17,6 @@
     "build": "tsc",
     "start": "npm run build -- --watch"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@types/isomorphic-fetch": "^0.0.39",
     "@types/jest": "^29.5.11",
