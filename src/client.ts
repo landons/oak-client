@@ -3,6 +3,8 @@ import * as mw from "./middleware";
 
 export type FetchType = typeof fetch;
 export type FetchArgs = Parameters<FetchType>;
+export type HeadersInit = globalThis.HeadersInit;
+export type BodyInit = globalThis.BodyInit;
 
 export interface OakResponse<T extends object = any> {
   status: number;
