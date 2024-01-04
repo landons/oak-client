@@ -2,12 +2,13 @@
   "name": "@oak/client",
   "author": "Landon Springer <landon.springer@gmail.com>",
   "license": "ISC",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "publishConfig": {
     "registry": "http://localhost:4873"
   },
   "description": "",
   "main": "./dist/index.js",
+  "files": ["dist", "src"],
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "npm run build -- --watch",
