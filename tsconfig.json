@@ -2,8 +2,9 @@
     "compilerOptions": {
       "strict": true,
       "outDir": "./dist",
-      "lib": ["ES2016", "DOM"],
-      "target": "ES2016",
+      "lib": ["es6", "dom", "dom.iterable"],
+      "target": "es6",
+      "module": "commonjs",
       "moduleResolution": "node",
       "esModuleInterop": true,
       "declaration": true,
